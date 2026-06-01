@@ -33,5 +33,6 @@ An agent must never propose or create a dependency edge pointing from a platform
 
 ## Confirmation gate
 
-Before creating or editing any file, state what you are about to do and why — and wait for
-explicit confirmation. This applies in all sessions, not only planning sessions.
+Before creating or editing any file, or running any git operation (`commit`, `push`,
+`branch`, `merge`, etc.), state what you are about to do and why — and wait for
+explicit confirmation.
