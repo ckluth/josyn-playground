@@ -58,8 +58,8 @@ For each repository it will:
   repo-pull-all          ← pulls everything, fast-forward only
 ```
 
-If `repo-push-all` reports **untracked files**, decide whether to add them to
-`.gitignore` or commit them manually before switching machines.
+If `repo-push-all` prompts about **untracked files**, choose Add to include them
+in the WIP commit or Skip to leave that repo alone and handle it manually.
 
 If `repo-pull-all` reports a repo as **dirty** or **ahead**, resolve that repo
 manually (`git status`, `git push`, etc.) and re-run.
@@ -68,7 +68,7 @@ manually (`git status`, `git push`, etc.) and re-run.
 
 ## Configuration
 
-Machine-to-path detection lives in **one place only**: `detect-root.cmd`.
+Machine-to-path detection lives in **one place only**: `.internal\detect-root.cmd`.
 All other scripts `CALL` it — nothing to touch elsewhere.
 
 | Hostname pattern | ROOT |

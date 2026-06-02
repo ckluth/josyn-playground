@@ -1,7 +1,7 @@
 chcp 1252
 @echo off
 
-CALL "%~dp0detect-root.cmd"
+CALL "%~dp0.internal\detect-root.cmd"
 
 SET REPOS=^
     %ROOT%\josyn-platform ^
@@ -14,6 +14,6 @@ SET REPOS=^
 	%ROOT%\josyn-roadmap 
    
 
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0repo-push-all.ps1" %REPOS%
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0.internal\repo-push-all.ps1" %REPOS%
 
 pause
