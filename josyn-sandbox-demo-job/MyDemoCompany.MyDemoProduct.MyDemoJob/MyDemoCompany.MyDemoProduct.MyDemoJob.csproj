@@ -16,6 +16,6 @@
 		<Content Include="icon.ico" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\..\josyn-job-host\JOSYN.JobHost\JOSYN.JobHost.csproj"/>
+		<ProjectReference Include="..\..\..\josyn-job-host\JOSYN.JobHost\JOSYN.JobHost.csproj"/>
 	</ItemGroup>
 </Project>

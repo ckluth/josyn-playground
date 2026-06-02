@@ -1,14 +1,17 @@
 @echo off
 
+REM SET ROOT=C:\DevGit
+SET ROOT=C:\Users\chris\OneDrive\DevGit
+
 SET REPOS=^
-    C:\DevGit\josyn-platform ^
-    C:\DevGit\josyn-foundation ^
-    C:\DevGit\josyn-jap ^
-	C:\DevGit\josyn-job-host ^
-    C:\DevGit\josyn-backend ^
-	C:\DevGit\josyn-commons ^
-	C:\DevGit\josyn-sandbox ^
-	C:\DevGit\josyn-roadmap 
+    %ROOT%\josyn-platform ^
+    %ROOT%\josyn-foundation ^
+    %ROOT%\josyn-jap ^
+	%ROOT%\josyn-job-host ^
+    %ROOT%\josyn-backend ^
+	%ROOT%\josyn-commons ^
+	%ROOT%\josyn-sandbox ^
+	%ROOT%\josyn-roadmap 
    
 
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0repo-status.ps1" %REPOS%

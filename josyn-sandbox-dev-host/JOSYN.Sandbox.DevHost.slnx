@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="JOSYN.Sandbox.DevHost/JOSYN.Sandbox.DevHost.csproj" />
+  <Project Path="JOSYN.Sandbox.DevHost.Test/JOSYN.Sandbox.DevHost.Test.csproj" />
+</Solution>
