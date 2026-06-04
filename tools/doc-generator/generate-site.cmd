@@ -3,8 +3,8 @@
 REM ── Configuration ────────────────────────────────────────────────────────────
 
 SET "SOURCE=%~dp0..\..\..\josyn-platform\solution-architecture"
-SET "OUTPUT=C:\Temp\josyn-docs"
-SET "TITLE=JOSYN Enterprise Architecture"
+SET "OUTPUT=%~dp0..\..\..\josyn-docs\solution-architecture"
+SET "TITLE=[josyn-docs]"
 
 REM ─────────────────────────────────────────────────────────────────────────────
 

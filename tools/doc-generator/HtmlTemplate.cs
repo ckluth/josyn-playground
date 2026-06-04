@@ -1,5 +1,20 @@
 static class HtmlTemplate
 {
+    private static readonly string Script = """
+        <script>
+            var toggle   = document.getElementById('nav-toggle');
+            var backdrop = document.getElementById('nav-backdrop');
+            function closeNav() { document.body.classList.remove('nav-open'); }
+            toggle.addEventListener('click', function() {
+              document.body.classList.toggle('nav-open');
+            });
+            backdrop.addEventListener('click', closeNav);
+            document.querySelectorAll('#sidebar a').forEach(function(a) {
+              a.addEventListener('click', closeNav);
+            });
+          </script>
+        """;
+
     public static string Render(string title, string siteTitle, string cssPath, string navHtml, string contentHtml) =>
         $"""
         <!DOCTYPE html>
@@ -11,7 +26,9 @@ static class HtmlTemplate
           <link rel="stylesheet" href="{cssPath}">
         </head>
         <body>
-          <nav>
+          <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+          <div id="nav-backdrop"></div>
+          <nav id="sidebar">
             <div class="nav-header">{System.Net.WebUtility.HtmlEncode(siteTitle)}</div>
             {navHtml}
           </nav>
@@ -20,6 +37,7 @@ static class HtmlTemplate
               {contentHtml}
             </article>
           </main>
+          {Script}
         </body>
         </html>
         """;
@@ -249,5 +267,52 @@ static class HtmlTemplate
         em { color: #c0c0c0; }
 
         img { max-width: 100%; height: auto; }
+
+        /* ── Hamburger button (hidden on desktop) ───────────────────── */
+
+        #nav-toggle {
+          display: none;
+          position: fixed;
+          top: 12px; left: 12px;
+          z-index: 200;
+          background: #252526;
+          color: #cccccc;
+          border: 1px solid #3e3e42;
+          border-radius: 4px;
+          width: 36px; height: 36px;
+          font-size: 18px;
+          line-height: 1;
+          cursor: pointer;
+        }
+
+        #nav-toggle:hover { background: #2a2d2e; color: #ffffff; }
+
+        #nav-backdrop {
+          display: none;
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.55);
+          z-index: 99;
+        }
+
+        /* ── Mobile layout ──────────────────────────────────────────── */
+
+        @media (max-width: 768px) {
+          #nav-toggle { display: flex; align-items: center; justify-content: center; }
+
+          nav {
+            transform: translateX(-100%);
+            transition: transform 0.22s ease;
+            z-index: 100;
+          }
+
+          body.nav-open nav            { transform: translateX(0); }
+          body.nav-open #nav-backdrop  { display: block; }
+
+          main {
+            margin-left: 0;
+            padding: 56px 16px 32px;
+          }
+        }
         """;
 }
