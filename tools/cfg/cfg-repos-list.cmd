@@ -4,9 +4,9 @@ REM ROOT must already be set (call cfg-detect-root.cmd before this file).
 SET REPOS=^
     %ROOT%\josyn-platform ^
     %ROOT%\josyn-foundation ^
-    %ROOT%\josyn-jap ^
-    %ROOT%\josyn-job-host ^
-    %ROOT%\josyn-backend ^
     %ROOT%\josyn-commons ^
+    %ROOT%\josyn-jap ^
+    %ROOT%\josyn-backend ^
+    %ROOT%\josyn-job-host ^
     %ROOT%\josyn-sandbox ^
     %ROOT%\josyn-roadmap
