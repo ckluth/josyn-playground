@@ -26,3 +26,9 @@ pause
 
 git clone https://github.com/ckluth/josyn-roadmap.git
 pause
+
+git clone https://github.com/ckluth/josyn-contoso.git
+pause
+
+git clone https://github.com/ckluth/josyn-docs.git
+pause

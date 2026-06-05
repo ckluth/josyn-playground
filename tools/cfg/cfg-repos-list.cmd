@@ -9,4 +9,6 @@ SET REPOS=^
     %ROOT%\josyn-backend ^
     %ROOT%\josyn-job-host ^
     %ROOT%\josyn-sandbox ^
-    %ROOT%\josyn-roadmap
+    %ROOT%\josyn-roadmap ^
+	%ROOT%\josyn-contoso ^
+	%ROOT%\josyn-docs
